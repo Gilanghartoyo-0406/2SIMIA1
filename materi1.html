@@ -1,0 +1,157 @@
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      header {
+        background-color: #333;
+        padding: 10px 20px;
+      }
+
+      nav ol {
+        list-style-type: none; /* Hilangkan angka default */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 18px;
+
+      }
+
+      nav li {
+        display: inline;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: background 0.3s;
+      }
+
+      nav a:hover {
+        background-color: #555;
+      }
+      
+      /* footer section */
+    footer {
+      background-color: #333;
+      text-align: center;
+      padding: 1rem 0 3rem;
+      margin-top: 3rem;
+    }
+
+
+    footer .credit {
+      font-size: 0.8rem;
+    }
+    
+    footer .credit a{
+      color: #ffffff;
+      font-weight: 700;
+    }
+    
+    </style>
+    <title>Gilang Putra Hartoyo | 2SIMIA1</title>
+    <link rel="stylesheet" href="prism-tomorrow.min.css" />
+  </head>
+  
+  <body>
+    <header>
+        <nav>
+            <ol>
+                <li><a href="materi1.html">Materi 1</a></li>
+                <li><a href="materi2.html">Materi 2</a></li>
+                <li><a href="materi3.html">Materi 3</a></li>
+                <li><a href="materi4.html">Materi 4</a></li>
+                <li><a href="materi5.html">Materi 5</a></li>
+                <li><a href="materi6.html">Materi 6</a></li>
+                <li><a href="materi7.html">Materi 7</a></li>
+                <li><a href="materi8.html">Materi 8</a></li>
+                <li><a href="materi9.html">Materi 9</a></li>
+                <li><a href="materi10.html">Materi 10</a></li>
+                <li><a href="materi11.html">Materi 11</a></li>
+                <li><a href="materi12.html">Materi 12</a></li>
+            </ol>
+        </nav>
+    </header>
+
+    <main style="padding: 20px;" >
+        <h1>Contoh penulisan script java script didalam internal html dan external</h1>
+        <p> 1.Penggunaan console diketik langsung dijendela terminal langsung </p>
+        <pre>
+          <code class="language-html">
+            &lt;!DOCTYPE html&gt; 
+            &lt;html lang="en"&gt; 
+            &lt;head&gt; 
+              &lt;meta charset="UTF-8"&gt; 
+              &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; 
+              &lt;title&gt;Document&lt;/title&gt; 
+            &lt;/head&gt; 
+            &lt;body&gt;
+            &lt;/body&gt; 
+            &lt;/html&gt;
+          </code>
+        </pre>
+
+        <p>2. Penggunaan console diketik langsung dijendela html dalam blok &lt;script&gt;&lt;/script&gt;  </p>
+        <pre>
+          <code class="language-html">
+            &lt;!DOCTYPE html&gt; 
+            &lt;html lang="en"&gt; 
+            &lt;head&gt; 
+              &lt;meta charset="UTF-8"&gt; 
+              &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; 
+              &lt;title&gt;Document&lt;/title&gt; 
+            &lt;/head&gt; 
+            &lt;body&gt; 
+              &lt;script&gt; 
+                alert("hallo java script asyik"); 
+                console.log("hallo"); 
+              &lt;/script&gt; 
+            &lt;/body&gt; 
+            &lt;/html&gt;
+          </code>
+        </pre>
+
+        <p>3. Penggunaan console diketik langsung dijendela file external java script (script.js)</p>
+        <pre>
+          <code class="language-html">
+            &lt;!DOCTYPE html&gt; 
+            &lt;html lang="en"&gt; 
+            &lt;head&gt; 
+              &lt;meta charset="UTF-8"&gt; 
+              &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; 
+              &lt;title&gt;Document&lt;/title&gt; 
+            &lt;/head&gt; 
+            &lt;body&gt; 
+              &lt;script src="script.js"&gt;&lt;/script&gt; 
+            &lt;/body&gt; 
+            &lt;/html&gt;
+          </code>
+        </pre>
+        
+        <p>Isi javascript yg diatas</p>
+        <pre>
+          <code class="language-js">
+          alert("hallo java script asyik"); 
+          console.log("hallo");
+          </code>
+        </pre>
+    </main>
+
+    <script src="prism.min.js"></script>
+    <script src="prism-javascript.min.js"></script>
+
+     <!-- footer start -->
+     <footer>
+      <div class="credit">
+      <p>Created by <a href="">gilangputrahartoyo|2SIMIA1</a>. | &copy; 2025.</p>
+     </div>
+    </footer>
+
+  </body>
+</html>
