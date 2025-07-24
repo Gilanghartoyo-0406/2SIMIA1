@@ -1,0 +1,158 @@
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      header {
+        background-color: #333;
+        padding: 10px 20px;
+      }
+
+      nav ol {
+        list-style-type: none; /* Hilangkan angka default */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 18px;
+      }
+
+      nav li {
+        display: inline;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: background 0.3s;
+      }
+
+      nav a:hover {
+        background-color: #555;
+      }
+
+      footer {
+      background-color: #333;
+      text-align: center;
+      padding: 1rem 0 3rem;
+      margin-top: 3rem;
+    }
+
+
+    footer .credit {
+      font-size: 0.8rem;
+    }
+    
+    footer .credit a{
+      color: #ffffff;
+      font-weight: 700;
+    }
+    </style>
+    <title>Gilang Putra Hartoyo | 2SIMIA1</title>
+    <link rel="stylesheet" href="prism-tomorrow.min.css" />
+  </head>
+  
+  <body>
+    <header>
+        <nav>
+            <ol>
+                <li><a href="materi1.html">Materi 1</a></li>
+                <li><a href="materi2.html">Materi 2</a></li>
+                <li><a href="materi3.html">Materi 3</a></li>
+                <li><a href="materi4.html">Materi 4</a></li>
+                <li><a href="materi5.html">Materi 5</a></li>
+                <li><a href="materi6.html">Materi 6</a></li>
+                <li><a href="materi7.html">Materi 7</a></li>
+                <li><a href="materi8.html">Materi 8</a></li>
+                <li><a href="materi9.html">Materi 9</a></li>
+                <li><a href="materi10.html">Materi 10</a></li>
+                <li><a href="materi11.html">Materi 11</a></li>
+                <li><a href="materi12.html">Materi 12</a></li>
+            </ol>
+        </nav>
+    </header>
+    <main style="padding: 20px;" >
+        <h1>Class dan object</h1>
+        <p> 1. Contoh penggunaan class dan object </p>
+        <pre>
+          <code class="language-js">
+            class Mahasiswa { 
+                constructor(nama, nim) { 
+                    this.nama = nama; // menyimpan nilai ke properti 'nama' 
+                    this.nim = nim;   // menyimpan nilai ke properti 'nim'  
+                } 
+                perkenalan() { 
+                    console.log(`Halo, saya ${this.nama}, NIM ${this.nim}`); 
+                } 
+            }
+            
+            // Membuat objek mahasiswa1 dengan nama "Budi" dan NIM "12345" 
+            let mahasiswa1 = new Mahasiswa("Budi", "12345"); 
+
+            // Membuat objek mahasiswa2 dengan nama "Siti" dan NIM "67890" 
+            let mahasiswa2 = new Mahasiswa("Siti", "67890"); 
+
+            // Mengakses properti objek 
+            console.log(mahasiswa1.nama); // Output: Budi 
+            console.log(mahasiswa2.nim);  // Output: 67890 
+
+            // Memanggil metode perkenalan pada objek 
+            mahasiswa1.perkenalan(); // Output: Halo, saya Budi, NIM 12345 
+            mahasiswa2.perkenalan(); // Output: Halo, saya Siti, NIM 67890
+          </code>
+        </pre>
+
+        <p>2.  Implementasi dasar class dan object  </p>
+       <pre>
+          <code class="language-js">
+            // Definisi Class (Cetak Biru) 
+                class Mobil { 
+                constructor(merk, warna) { 
+                    this.merk = merk; 
+                    this.warna = warna; 
+                    this.kecepatan = 0; 
+                } 
+                
+                maju() { 
+                    this.kecepatan += 10; 
+                    console.log(`${this.merk} berwarna ${this.warna} melaju dengan kecepatan ${this.kecepatan} km/jam.`); 
+                } 
+                
+                berhenti() { 
+                    this.kecepatan = 0; 
+                    console.log(`${this.merk} berwarna ${this.warna} berhenti.`); 
+                } 
+                } 
+                
+                // Membuat Objek (Membangun Mobil dari Cetak Biru) 
+                let mobilSaya = new Mobil("Honda", "Merah"); // Memanggil konstruktor dengan merk 
+                "Honda" dan warna "Merah" 
+
+                let mobilTeman = new Mobil("Toyota", "Hitam"); // Membuat objek lain dengan merk 
+                "Toyota" dan warna "Hitam" 
+                
+                // Mengakses Properti Objek 
+                console.log(mobilSaya.merk);   // Output: Honda 
+                console.log(mobilTeman.warna);  // Output: Hitam 
+                
+                // Memanggil Metode Objek 
+                mobilSaya.maju();    // Output: Honda berwarna Merah melaju dengan kecepatan 10 km/jam. 
+                mobilTeman.berhenti(); // Output: Toyota berwarna Hitam berhenti.
+          </code>
+        </pre>
+        
+    <script src="prism.min.js"></script>
+    <script src="prism-javascript.min.js"></script>
+     <!-- footer start -->
+     <footer>
+      <div class="credit">
+      <p>Created by <a href="">gilangputrahartoyo|2SIMIA1</a>. | &copy; 2025.</p>
+     </div>
+    </footer>
+
+  </body>
+</html>

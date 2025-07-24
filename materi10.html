@@ -1,0 +1,256 @@
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      header {
+        background-color: #333;
+        padding: 10px 20px;
+      }
+
+      nav ol {
+        list-style-type: none; /* Hilangkan angka default */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 18px;
+      }
+
+      nav li {
+        display: inline;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: background 0.3s;
+      }
+
+      nav a:hover {
+        background-color: #555;
+      }
+
+      footer {
+      background-color: #333;
+      text-align: center;
+      padding: 1rem 0 3rem;
+      margin-top: 3rem;
+    }
+
+
+    footer .credit {
+      font-size: 0.8rem;
+    }
+    
+    footer .credit a{
+      color: #ffffff;
+      font-weight: 700;
+    }
+    </style>
+    <title>Gilang Putra Hartoyo | 2SIMIA1</title>
+    <link rel="stylesheet" href="prism-tomorrow.min.css" />
+  </head>
+  
+  <body>
+    <header>
+        <nav>
+            <ol>
+                <li><a href="materi1.html">Materi 1</a></li>
+                <li><a href="materi2.html">Materi 2</a></li>
+                <li><a href="materi3.html">Materi 3</a></li>
+                <li><a href="materi4.html">Materi 4</a></li>
+                <li><a href="materi5.html">Materi 5</a></li>
+                <li><a href="materi6.html">Materi 6</a></li>
+                <li><a href="materi7.html">Materi 7</a></li>
+                <li><a href="materi8.html">Materi 8</a></li>
+                <li><a href="materi9.html">Materi 9</a></li>
+                <li><a href="materi10.html">Materi 10</a></li>
+                <li><a href="materi11.html">Materi 11</a></li>
+                <li><a href="materi12.html">Materi 12</a></li>
+            </ol>
+        </nav>
+    </header>
+    <main style="padding: 20px;" >
+        <h1>PERULANGAN </h1>
+        <p>1. array1.html</p>
+    <pre>
+        <code class="language-html">
+        &lt;HTML&gt;
+        &lt;HEAD&gt;
+        &lt;TITLE&gt;Latihan Objek Array&lt;/TITLE&gt;
+        &lt;/HEAD&gt;
+        &lt;BODY&gt;
+            &lt;h3&gt;Latihan Objek Array I&lt;/H3&gt; Nama pada data ke 3 adalah:
+            &lt;SCRIPT LANGUAGE="JavaScript"&gt;
+            &lt;!-- Memyembunyikan kode dari browser non-js
+            function cobaarray()
+            {
+                nama = new Array("Dian","Andri","Irawan");
+                document.write(nama[2]);
+            }   
+        // akhir dari penyembunyian --&gt;
+        &lt;/SCRIPT&gt;
+        &lt;SCRIPT LANGUAGE="JavaScript"&gt;
+        cobaarray();
+        &lt;/SCRIPT&gt;
+        &lt;/BODY&gt;
+        &lt;/HTML&gt;
+    </code>
+</pre>
+
+  <p>2. (array2.html)</p>
+    <pre>
+        <code class="language-html">
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+            &lt;title&gt;Form Cari Nama dengan Sorot&lt;/title&gt;
+            &lt;style&gt;
+            .highlight {
+                color: red;
+                font-weight: bold;
+            }
+            &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+            &lt;h2&gt;Form Tambah Nama&lt;/h2&gt;
+            &lt;label&gt;Masukkan Nama :&lt;/label&gt; &lt;input type="text" id="namaBaru"&gt;
+            &lt;button type="button" onclick="tambahNama()"&gt;Tambah&lt;/button&gt;
+            &lt;button type="button" onclick="tampilkanSemua()"&gt;Tampilkan Semua&lt;/button&gt;
+
+            &lt;br&gt;&lt;br&gt;
+
+            &lt;label&gt;Cari Nama :&lt;/label&gt; &lt;input type="text" id="namaCari"&gt;
+            &lt;button type="button" onclick="cariNama()"&gt;Cari Index&lt;/button&gt;
+
+            &lt;hr&gt;
+
+            &lt;div id="output" style="white-space: pre-line; font-family: monospace;"&gt;&lt;/div&gt;
+
+            &lt;script&gt;
+            let daftarNama = [];
+            let highlightIndex = -1; // untuk penanda index yang disorot
+
+            function tambahNama() {
+                const input = document.getElementById("namaBaru").value.trim();
+                if (input === "") {
+                    alert("Nama tidak boleh kosong.");
+                    return;
+                }
+                daftarNama.push(input);
+                document.getElementById("namaBaru").value = "";
+                highlightIndex = -1; // reset sorotan
+                alert("Nama berhasil ditambahkan!");
+            }
+
+            function tampilkanSemua() {
+                const output = document.getElementById("output");
+                if (daftarNama.length === 0) {
+                    output.innerHTML = "Belum ada nama yang ditambahkan.";
+                    return;
+                }
+                let teks = "";
+                for (let i = 0; i &lt; daftarNama.length; i++) {
+                    if (i === highlightIndex) {
+                        teks += `Index ke-${i}: &lt;span class="highlight"&gt;${daftarNama[i]}&lt;/span&gt;\n`;
+                    } else {
+                        teks += `Index ke-${i}: ${daftarNama[i]}\n`;
+                    }
+                }
+                output.innerHTML = teks;
+            }
+
+            function cariNama() {
+                const dicari = document.getElementById("namaCari").value.trim();
+                if (dicari === "") {
+                    alert("Silakan isi nama yang ingin dicari.");
+                    return;
+                }
+                const index = daftarNama.indexOf(dicari);
+                if (index !== -1) {
+                    highlightIndex = index; // simpan index yang akan disorot
+                    tampilkanSemua(); // refresh tampilan
+                    alert(`Nama "${dicari}" ditemukan di index ke-${index}.`);
+                } else {
+                    highlightIndex = -1;
+                    tampilkanSemua();
+                    alert(`Nama "${dicari}" tidak ditemukan.`);
+                }
+            }
+            &lt;/script&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </code>
+    </pre>
+
+
+  <p>3. Fungsi tentang Tanggal dan Waktu (tanggal.html)</p>
+<pre>
+    <code class="language-html">
+        &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;head&gt;
+        &lt;title&gt;Fungsi Tanggal dengan Form&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+        &lt;h2&gt;Form Pilih Tanggal&lt;/h2&gt;
+        &lt;form name="formTanggal"&gt;
+        &lt;label for="tgl"&gt;Pilih Tanggal:&lt;/label&gt;
+        &lt;input type="date" name="tanggal" id="tgl"&gt;
+        &lt;input type="button" value="Tampilkan Info Tanggal" onclick="tampilkanTanggal()"&gt;
+        &lt;/form&gt;
+
+        &lt;p id="hasil"&gt;&lt;/p&gt;
+
+        &lt;script&gt;
+        function tampilkanTanggal() {
+            var form = document.forms["formTanggal"];
+            var tglInput = form["tanggal"].value;
+
+            if (tglInput === "") {
+                document.getElementById("hasil").innerHTML = "Silakan pilih tanggal terlebih dahulu.";
+                return;
+            }
+
+            var tgl = new Date(tglInput);
+
+            var namaHari = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+            var namaBulan = [
+                "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus",
+                "September", "Oktober", "November", "Desember"
+            ];
+
+            var hari = namaHari[tgl.getDay()];
+            var tanggal = tgl.getDate();
+            var bulan = namaBulan[tgl.getMonth()];
+            var tahun = tgl.getFullYear();
+
+            var hasil = "Tanggal dipilih: " + tanggal + " " + bulan + " " + tahun + "&lt;br&gt;";
+            hasil += "Hari: " + hari;
+
+            document.getElementById("hasil").innerHTML = hasil;
+        }
+        &lt;/script&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+    </code>
+</pre>
+
+
+    <script src="prism.min.js"></script>
+    <script src="prism-javascript.min.js"></script>
+     <!-- footer start -->
+     <footer>
+      <div class="credit">
+      <p>Created by <a href="">gilangputrahartoyo|2SIMIA1</a>. | &copy; 2025.</p>
+     </div>
+    </footer>
+
+  </body>
+</html>
+

@@ -1,0 +1,258 @@
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      header {
+        background-color: #333;
+        padding: 10px 20px;
+      }
+
+      nav ol {
+        list-style-type: none; /* Hilangkan angka default */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 18px;
+      }
+
+      nav li {
+        display: inline;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: background 0.3s;
+      }
+
+      nav a:hover {
+        background-color: #555;
+      }
+
+      footer {
+      background-color: #333;
+      text-align: center;
+      padding: 1rem 0 3rem;
+      margin-top: 3rem;
+    }
+
+
+    footer .credit {
+      font-size: 0.8rem;
+    }
+    
+    footer .credit a{
+      color: #ffffff;
+      font-weight: 700;
+    }
+    </style>
+    <title>Gilang Putra Hartoyo | 2SIMIA1</title>
+    <link rel="stylesheet" href="prism-tomorrow.min.css" />
+  </head>
+  
+  <body>
+    <header>
+        <nav>
+            <ol>
+               <li><a href="materi1.html">Materi 1</a></li>
+                <li><a href="materi2.html">Materi 2</a></li>
+                <li><a href="materi3.html">Materi 3</a></li>
+                <li><a href="materi4.html">Materi 4</a></li>
+                <li><a href="materi5.html">Materi 5</a></li>
+                <li><a href="materi6.html">Materi 6</a></li>
+                <li><a href="materi7.html">Materi 7</a></li>
+                <li><a href="materi8.html">Materi 8</a></li>
+                <li><a href="materi9.html">Materi 9</a></li>
+                <li><a href="materi10.html">Materi 10</a></li>
+                <li><a href="materi11.html">Materi 11</a></li>
+                <li><a href="materi12.html">Materi 12</a></li>
+            </ol>
+        </nav>
+    </header>
+    <main style="padding: 20px;" >
+        <h1>Studi Kasus Penggunaan Konstruktor dan Konsep Destructor </h1>
+        <p> 1. Class Person dengan Inisialisasi Nama dan Usia </p>
+        <pre>
+          <code class="language-js">
+            class Person { 
+                constructor(name, age) { 
+                    this.name = name; 
+                    this.age = age; 
+                } 
+                
+                greet() { 
+                    console.log(`Halo, nama saya ${this.name} dan usia saya ${this.age} tahun.`); 
+                } 
+            } 
+                
+            // Membuat objek Person menggunakan konstruktor 
+            let person1 = new Person("Budi", 30); 
+            let person2 = new Person("Siti", 25); 
+                
+            // Mengakses properti dan memanggil method 
+            person1.greet(); // Output: Halo, nama saya Budi dan usia saya 30 tahun. 
+            console.log(person2.name); // Output: Siti 
+            console.log(person2.age);  // Output: 25
+          </code>
+        </pre>
+
+        <p>2. Class Car dengan Properti Default    </p>
+       <pre>
+          <code class="language-js">
+                class Car { 
+                    constructor(brand, model, color = "Hitam") { // 'color' memiliki nilai default "Hitam" 
+                        this.brand = brand; 
+                        this.model = model; 
+                        this.color = color; 
+                        this.speed = 0; // Properti dengan nilai default di dalam konstruktor 
+                    } 
+                    
+                    accelerate(increment) { 
+                        this.speed += increment; 
+                        console.log(`${this.brand} ${this.model} berakselerasi menjadi ${this.speed} 
+                    km/jam.`); 
+                    } 
+                } 
+                    
+                // Membuat objek Car 
+                let car1 = new Car("Toyota", "Avanza", "Merah"); 
+                let car2 = new Car("Honda", "Jazz"); // Tidak memberikan warna, akan menggunakan default "Hitam" 
+                    
+                car1.accelerate(20); // Output: Toyota Avanza berakselerasi menjadi 20 km/jam. 
+                car2.accelerate(30); // Output: Honda Jazz berakselerasi menjadi 30 km/jam. 
+                console.log(car1.color); // Output: Merah 
+                console.log(car2.color); // Output: Hitam
+          </code>
+        </pre>
+
+        <p>3. Class ShoppingCart dengan Manajemen Item    </p>
+       <pre>
+          <code class="language-js">
+           class ShoppingCart { 
+                constructor() { 
+                    this.items = []; // Properti 'items' diinisialisasi sebagai array kosong 
+                    this.totalItems = 0; 
+                } 
+                
+                addItem(itemName, price) { 
+                    this.items.push({ name: itemName, price: price }); 
+                    this.totalItems++; 
+                    console.log(`${itemName} ditambahkan ke keranjang.`); 
+                } 
+                
+                getTotalPrice() { 
+                    let totalPrice = 0; 
+                    for (const item of this.items) { 
+                        totalPrice += item.price; 
+                    } 
+                    return totalPrice; 
+                } 
+                
+                getItemCount() { 
+                    return this.totalItems; 
+                } 
+            } 
+                
+            // Membuat objek ShoppingCart 
+            let cart = new ShoppingCart(); 
+                
+            // Menambahkan item ke keranjang 
+            cart.addItem("Buku", 25000); 
+            cart.addItem("Pensil", 2000); 
+            cart.addItem("Penggaris", 3000); 
+                
+            // Mendapatkan informasi keranjang 
+            console.log(`Jumlah item dalam keranjang: ${cart.getItemCount()}`); // Output: Jumlah item dalam keranjang: 3 
+            console.log(`Total harga: Rp ${cart.getTotalPrice()}`); // Output: Total harga: Rp 30000
+          </code>
+        </pre>
+
+        <p>4. Class dengan Validasi Input di Konstruktor   </p>
+       <pre>
+          <code class="language-js">
+            class UserAccount { 
+                constructor(username, password) { 
+                    if (typeof username !== 'string' || username.length < 5) { 
+                        throw new Error("Username harus berupa string dengan minimal 5 karakter."); 
+                    } 
+                    if (typeof password !== 'string' || password.length < 8) { 
+                        throw new Error("Password harus berupa string dengan minimal 8 karakter."); 
+                    } 
+                    this.username = username; 
+                    this.password = password; 
+                    this.isLoggedIn = false; 
+                } 
+                
+                login(enteredPassword) { 
+                    if (enteredPassword === this.password) { 
+                        this.isLoggedIn = true; 
+                        console.log(`${this.username} berhasil login.`); 
+                        return true; 
+                    } else { 
+                        console.log("Login gagal. Password salah."); 
+                        return false; 
+                    } 
+                } 
+            } 
+                
+            try { 
+            let user1 = new UserAccount("budi123", "rahasia123"); 
+            user1.login("rahasia123"); // Output: budi123 berhasil login. 
+            let user2 = new UserAccount("andi", "123"); // Akan melempar error karena password 
+            terlalu pendek 
+            } catch (error) { 
+            console.error("Error membuat akun:", error.message); 
+            } 
+          </code>
+        </pre>
+
+        <p>5. Menambahkan Method (Fungsi dalam Class)   </p>
+       <pre>
+          <code class="language-js">
+            class Persegi { 
+                    constructor(sisi) { 
+                    this.sisi = sisi; 
+                } 
+                
+                // Method untuk menghitung luas persegi 
+                hitungLuas() { 
+                    return this.sisi * this.sisi; 
+                } 
+                
+                // Method untuk menghitung keliling persegi 
+                hitungKeliling() { 
+                    return 4 * this.sisi; 
+                } 
+                
+                // Method yang mengakses properti lain dan memanggil method lain 
+                deskripsi() { 
+                    console.log(`Persegi dengan sisi ${this.sisi}, luas ${this.hitungLuas()},  
+                    dan keliling ${this.hitungKeliling()}.`); 
+                } 
+            } 
+                
+            let persegiA = new Persegi(5); 
+            console.log(persegiA.hitungLuas());     // Output: 25 
+            console.log(persegiA.hitungKeliling()); // Output: 20 
+            persegiA.deskripsi();                   // Output: Persegi dengan sisi 5, luas 25, dan keliling 20. 
+          </code>
+        </pre>
+ 
+    <script src="prism.min.js"></script>
+    <script src="prism-javascript.min.js"></script>
+     <!-- footer start -->
+     <footer>
+      <div class="credit">
+      <p>Created by <a href="">gilangputrahartoyo|2SIMIA1</a>. | &copy; 2025.</p>
+     </div>
+    </footer>
+
+  </body>
+</html>
+

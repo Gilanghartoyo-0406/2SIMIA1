@@ -1,0 +1,256 @@
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      header {
+        background-color: #333;
+        padding: 10px 20px;
+      }
+
+      nav ol {
+        list-style-type: none; /* Hilangkan angka default */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 18px;
+      }
+
+      nav li {
+        display: inline;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: background 0.3s;
+      }
+
+      nav a:hover {
+        background-color: #555;
+      }
+
+      footer {
+      background-color: #333;
+      text-align: center;
+      padding: 1rem 0 3rem;
+      margin-top: 3rem;
+    }
+
+
+    footer .credit {
+      font-size: 0.8rem;
+    }
+    
+    footer .credit a{
+      color: #ffffff;
+      font-weight: 700;
+    }
+    </style>
+    <title>Gilang Putra Hartoyo | 2SIMIA1</title>
+    <link rel="stylesheet" href="prism-tomorrow.min.css" />
+  </head>
+  
+  <body>
+    <header>
+        <nav>
+            <ol>
+                <li><a href="materi1.html">Materi 1</a></li>
+                <li><a href="materi2.html">Materi 2</a></li>
+                <li><a href="materi3.html">Materi 3</a></li>
+                <li><a href="materi4.html">Materi 4</a></li>
+                <li><a href="materi5.html">Materi 5</a></li>
+                <li><a href="materi6.html">Materi 6</a></li>
+                <li><a href="materi7.html">Materi 7</a></li>
+                <li><a href="materi8.html">Materi 8</a></li>
+                <li><a href="materi9.html">Materi 9</a></li>
+                <li><a href="materi10.html">Materi 10</a></li>
+                <li><a href="materi11.html">Materi 11</a></li>
+                <li><a href="materi12.html">Materi 12</a></li>
+            </ol>
+        </nav>
+    </header>
+    <main style="padding: 20px;" >
+        <h1>OBJEK DALAM JAVASCRIPT </h1>
+        <p> 1. Objek text </p>
+        <pre>
+          <code class="language-html">
+            &lt;html&gt;
+            &lt;head&gt;&lt;title&gt;Latihan Dengan Objek Text&lt;/title&gt;&lt;/head&gt;
+            &lt;body&gt;
+            &lt;script language="JavaScript"&gt;
+            function tekan() {
+            var namastr = document.fform.nama.value;
+            var alamatstr = document.fform.alamat.value;
+            document.fform.onama.value = namastr;
+            document.fform.oalamat.value = alamatstr;
+            }
+            &lt;/script&gt;
+
+            &lt;form name="fform"&gt;
+            &lt;h1&gt;Memasukkan Data Dengan Objek Teks&lt;/h1&gt;&lt;hr&gt;
+            &lt;pre&gt;
+            Nama Anda : &lt;input type="text" size="11" name="nama"&gt; 
+            Alamat : &lt;input type="text" size="25" name="alamat"&gt;
+            &lt;/pre&gt;
+            &lt;br&gt;
+            &lt;input type="button" value="kirim" onclick="tekan()"&gt;
+            &lt;input type="reset" value="ulang"&gt;
+            &lt;h3&gt;Output&lt;/h3&gt;
+            &lt;pre&gt;
+            Jadi Nama Anda adalah : &lt;input type="text" size="11" name="onama"&gt; 
+            Alamat Anda di : &lt;input type="text" size="25" name="oalamat"&gt;
+            &lt;/pre&gt;
+            &lt;/form&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+          </code>
+        </pre>
+
+        <p>2. Objek Radio </p>
+       <pre>
+          <code class="language-html">
+            &lt;html&gt;
+            &lt;head&gt;&lt;title&gt;Latihan Dengan Objek Radio&lt;/title&gt;&lt;/head&gt;
+            &lt;body&gt;
+            &lt;script language="JavaScript"&gt;
+            function radio_box(form) {
+            var ket = "";
+            if (form.wanita.checked == true) {
+                ket = "Wanita";
+            } else {
+                ket = "Pria";
+            }
+            alert('Anda adalah seorang ' + ket);
+            }
+            &lt;/script&gt;
+
+            &lt;form&gt;
+            &lt;h1&gt;Memasukkan Data Dengan Objek Radio&lt;/h1&gt;&lt;hr&gt;
+            &lt;p&gt;&lt;input type="radio" value="wanita" name="wanita"&gt;Wanita&lt;/p&gt;&lt;hr&gt;
+            &lt;p&gt;
+                &lt;input type="button" value="CONFIRM" onclick="radio_box(this.form)"&gt;
+                &lt;input type="reset" value="RESET"&gt;
+            &lt;/p&gt;
+            &lt;/form&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+          </code>
+        </pre>
+
+        <p>3. Objek Checkbox </p>
+       <pre>
+          <code class="language-html">
+            &lt;html&gt;
+            &lt;head&gt;&lt;title&gt;Latihan Dengan Objek Checkbox&lt;/title&gt;&lt;/head&gt;
+            &lt;body&gt;
+            &lt;script language="JavaScript"&gt;
+            function radio_box(form) {
+            var ket = "";
+            var ket1 = "";
+            if (form.bola.checked == true) {
+                ket = "Nonton Bola";
+            }
+            if (form.tv.checked == true) {
+                ket1 = " Nonton Tv";
+            }
+            alert('Hobby anda ' + ket + '' + ket1);
+            }
+            &lt;/script&gt;
+
+            &lt;form&gt;
+            &lt;h1&gt;Memasukkan Data Dengan Objek Checkbox&lt;/h1&gt;&lt;hr&gt;
+            &lt;p&gt;Hobby anda:
+                &lt;input type="checkbox" value="ON" name="bola"&gt;Nonton Sepak Bola
+                &lt;input type="checkbox" value="ON" name="tv"&gt;Nonton televisi
+            &lt;/p&gt;&lt;hr&gt;
+            &lt;p&gt;
+                &lt;input type="button" value="CONFIRM" onclick="radio_box(this.form)"&gt;
+                &lt;input type="reset" value="RESET"&gt;
+            &lt;/p&gt;
+            &lt;/form&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+          </code>
+        </pre>
+
+        <p>4. Objek TextArea </p>
+       <pre>
+          <code class="language-html">
+            &lt;html&gt;
+            &lt;head&gt;&lt;title&gt;Latihan Dengan Objek TextArea&lt;/title&gt;&lt;/head&gt;
+            &lt;body&gt;
+            &lt;script language="JavaScript"&gt;
+            function tekan() {
+            var ketstr = document.fform.Ket.value;
+            document.fform.Oket.value = ketstr;
+            }
+            &lt;/script&gt;
+
+            &lt;form name="fform"&gt;
+            &lt;h1&gt;Memasukkan Data Dengan Objek TextArea&lt;/h1&gt;&lt;hr&gt;
+            &lt;h3&gt;Keterangan:&lt;/h3&gt;&lt;br&gt;
+            &lt;textarea name="Ket" rows="3" cols="30"&gt;&lt;/textarea&gt;
+            &lt;br&gt;&lt;br&gt;
+            &lt;input type="button" value="kirim" onclick="tekan()"&gt;
+            &lt;input type="reset" value="ulang"&gt;
+            &lt;h3&gt;Output Keterangan:&lt;/h3&gt;
+            &lt;textarea name="Oket" rows="3" cols="30"&gt;&lt;/textarea&gt;
+            &lt;/form&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+          </code>
+        </pre>
+        <p>5. Objek Select </p>
+       <pre>
+          <code class="language-html">
+            &lt;html&gt;
+            &lt;head&gt;&lt;title&gt;Latihan Dengan Objek Select&lt;/title&gt;&lt;/head&gt;
+            &lt;body&gt;
+            &lt;script language="JavaScript"&gt;
+            function tekan() {
+            var jurusanstr = document.fform.Jurusan.value;
+            document.fform.Ojurusan.value = jurusanstr;
+            }
+            &lt;/script&gt;
+
+            &lt;form name="fform"&gt;
+            &lt;h1&gt;Penggunaan Objek Select&lt;/h1&gt;&lt;hr&gt;
+            &lt;h3&gt;Masukan:&lt;/h3&gt;
+            Jurusan di STMIK TRIGUNA DHARMA:
+            &lt;select name="Jurusan" size="1"&gt;
+                &lt;option value="Sistem Informasi"&gt;Sistem Informasi&lt;/option&gt;
+                &lt;option value="Sistem Komputer"&gt;Sistem Komputer&lt;/option&gt;
+                &lt;option value="Manajemen Informatika"&gt;Manajemen Informatika&lt;/option&gt;
+                &lt;option value="Teknik Komputer"&gt;Teknik Komputer&lt;/option&gt;
+            &lt;/select&gt;
+
+            &lt;p&gt;
+                &lt;input type="button" value="kirim" onclick="tekan()"&gt;
+                &lt;input type="reset" value="ulang"&gt;
+            &lt;/p&gt;
+            &lt;h3&gt;Output jurusan:&lt;/h3&gt;
+            &lt;input type="text" name="Ojurusan" size="30"&gt;
+            &lt;/form&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+          </code>
+        </pre>
+
+    <script src="prism.min.js"></script>
+    <script src="prism-javascript.min.js"></script>
+     <!-- footer start -->
+     <footer>
+      <div class="credit">
+      <p>Created by <a href="">gilangputrahartoyo|2SIMIA1</a>. | &copy; 2025.</p>
+     </div>
+    </footer>
+
+  </body>
+</html>
+

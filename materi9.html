@@ -1,0 +1,178 @@
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      header {
+        background-color: #333;
+        padding: 10px 20px;
+      }
+
+      nav ol {
+        list-style-type: none; /* Hilangkan angka default */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 18px;
+      }
+
+      nav li {
+        display: inline;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: background 0.3s;
+      }
+
+      nav a:hover {
+        background-color: #555;
+      }
+
+      footer {
+      background-color: #333;
+      text-align: center;
+      padding: 1rem 0 3rem;
+      margin-top: 3rem;
+    }
+
+
+    footer .credit {
+      font-size: 0.8rem;
+    }
+    
+    footer .credit a{
+      color: #ffffff;
+      font-weight: 700;
+    }
+    </style>
+    <title>Gilang Putra Hartoyo | 2SIMIA1</title>
+    <link rel="stylesheet" href="prism-tomorrow.min.css" />
+  </head>
+  
+  <body>
+    <header>
+        <nav>
+            <ol>
+                <li><a href="materi1.html">Materi 1</a></li>
+                <li><a href="materi2.html">Materi 2</a></li>
+                <li><a href="materi3.html">Materi 3</a></li>
+                <li><a href="materi4.html">Materi 4</a></li>
+                <li><a href="materi5.html">Materi 5</a></li>
+                <li><a href="materi6.html">Materi 6</a></li>
+                <li><a href="materi7.html">Materi 7</a></li>
+                <li><a href="materi8.html">Materi 8</a></li>
+                <li><a href="materi9.html">Materi 9</a></li>
+                <li><a href="materi10.html">Materi 10</a></li>
+                <li><a href="materi11.html">Materi 11</a></li>
+                <li><a href="materi12.html">Materi 12</a></li>
+            </ol>
+        </nav>
+    </header>
+    <main style="padding: 20px;" >
+        <h1>PERULANGAN </h1>
+        <p> 1. Perulangan For </p>
+  <pre>
+    <code class="language-html">
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script language="JavaScript"&gt;
+    document.writeln("&lt;h2&gt;Latihan Perulangan For&lt;/h2&gt;");
+    for (i=1; i&lt;=10; i++) {
+      sq = i*i;
+      document.writeln("&lt;pre&gt;");
+      document.write("Angka " + i + " Kuadrat = " + sq );
+    }
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+  </code>
+</pre>
+
+  <p>2. Perulangan While</p>
+  <pre>
+    <code class="language-html">
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Latihan Perulangan II&lt;/title&gt;
+&lt;/head&gt;
+&lt;script language="JavaScript"&gt;
+  var deret = prompt('Masukkan Jumlah Deret :','');
+  document.writeln("&lt;h2&gt;Perulangan Dengan While&lt;/h2&gt;");
+  document.writeln(" ");
+  document.writeln("&lt;br&gt;");
+  var jml = 0.0;
+  var angka = 1;
+  while (angka &lt;= deret) {
+    jml = jml + angka;
+    angka++;
+  }
+  document.writeln("&lt;br&gt;");
+  document.writeln("Jumlah Deret dari 1 sampai " + deret + " adalah = " + jml);
+  document.writeln("&lt;br&gt;");
+  document.writeln(" ");
+&lt;/script&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+  </code>
+</pre>
+
+  <p>3. Perulangan Do While</p>
+  <pre>
+    <code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Simulasi Do While dengan Form&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h2&gt;Simulasi Perulangan Do...While&lt;/h2&gt;
+  &lt;form onsubmit="tampilkanPerulangan(); return false;"&gt;
+    &lt;label&gt;Masukkan angka maksimal: &lt;/label&gt;
+    &lt;input type="number" id="angka" min="1" required&gt;
+    &lt;input type="submit" value="Mulai Perulangan"&gt;
+  &lt;/form&gt;
+
+  &lt;hr&gt;
+  &lt;div id="hasil"&gt;&lt;/div&gt;
+
+  &lt;script&gt;
+    function tampilkanPerulangan() {
+      let batas = parseInt(document.getElementById("angka").value);
+      let i = 1;
+      let output = "";
+      do {
+        output += "Perulangan ke-" + i + "&lt;br&gt;";
+        i++;
+      } while (i &lt;= batas);
+      document.getElementById("hasil").innerHTML = output;
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+  </code>
+</pre>
+
+    <script src="prism.min.js"></script>
+    <script src="prism-javascript.min.js"></script>
+
+ <!-- footer start -->
+     <footer>
+      <div class="credit">
+      <p>Created by <a href="">gilangputrahartoyo|2SIMIA1</a>. | &copy; 2025.</p>
+     </div>
+    </footer>
+
+    
+  </body>
+</html>
+

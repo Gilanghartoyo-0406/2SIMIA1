@@ -1,0 +1,287 @@
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      header {
+        background-color: #333;
+        padding: 10px 20px;
+      }
+
+      nav ol {
+        list-style-type: none; /* Hilangkan angka default */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 18px;
+      }
+
+      nav li {
+        display: inline;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: background 0.3s;
+      }
+
+      nav a:hover {
+        background-color: #555;
+      }
+
+      footer {
+      background-color: #333;
+      text-align: center;
+      padding: 1rem 0 3rem;
+      margin-top: 3rem;
+    }
+
+
+    footer .credit {
+      font-size: 0.8rem;
+    }
+    
+    footer .credit a{
+      color: #ffffff;
+      font-weight: 700;
+    }
+    </style>
+    <title>Gilang Putra Hartoyo | 2SIMIA1</title>
+    <link rel="stylesheet" href="prism-tomorrow.min.css" />
+  </head>
+  
+  <body>
+    <header>
+        <nav>
+            <ol>
+                <li><a href="materi1.html">Materi 1</a></li>
+                <li><a href="materi2.html">Materi 2</a></li>
+                <li><a href="materi3.html">Materi 3</a></li>
+                <li><a href="materi4.html">Materi 4</a></li>
+                <li><a href="materi5.html">Materi 5</a></li>
+                <li><a href="materi6.html">Materi 6</a></li>
+                <li><a href="materi7.html">Materi 7</a></li>
+                <li><a href="materi8.html">Materi 8</a></li>
+                <li><a href="materi9.html">Materi 9</a></li>
+                <li><a href="materi10.html">Materi 10</a></li>
+                <li><a href="materi11.html">Materi 11</a></li>
+                <li><a href="materi12.html">Materi 12</a></li>
+            </ol>
+        </nav>
+    </header>
+    <main style="padding: 20px;" >
+        <h1>EVENT (KEJADIAN) </h1>
+            <p>1. Perulangan For Program JavaScript (On_click.html)</p>
+    <pre>
+        <code class="language-html">
+                &lt;HTML&gt;
+                &lt;BODY&gt;
+                &lt;SCRIPT LANGUAGE="JavaScript"&gt;
+                function warna(pilihan)
+                {
+                alert("Anda Memilih Warna " + pilihan); document.bgColor=pilihan;
+                }
+                &lt;/SCRIPT&gt;
+                &lt;h1 align="center"&gt;Latihan Event OnClick&lt;/h1&gt;
+                &lt;hr width="500" color="black" noshade&gt;
+                &lt;h3 align="center"&gt;Pilih warna favorit anda.&lt;/h3&gt;
+                &lt;CENTER&gt;
+                &lt;FORM&gt;
+                &lt;INPUT TYPE="button" VALUE="Biru" onClick="warna('lightblue')"&gt;
+                &lt;INPUT TYPE="button" VALUE="Pink" onClick="warna('pink')"&gt;
+                &lt;INPUT TYPE="button" VALUE="Coklat" onClick="warna('burlywood')"&gt;
+                &lt;INPUT TYPE="button" VALUE="Kelabu" onClick="warna('darkgray')"&gt;
+                &lt;INPUT TYPE="button" VALUE="Oranye" onClick="warna('peachpuff')"&gt;
+                &lt;INPUT TYPE="button" VALUE="Putih" onClick="warna('white')"&gt;
+                &lt;/FORM&gt;
+                &lt;FORM&gt;
+                &lt;IMG NAME="coolfan" SRC="fanoff.gif" width=61 height=72&gt;&lt;BR&gt;&lt;BR&gt;
+                &lt;INPUT TYPE=BUTTON VALUE=" Off " onClick="coolfan.src = 'fanoff.gif'"&gt;
+                &lt;INPUT TYPE=BUTTON VALUE=" On " onClick="coolfan.src = 'fanon.gif'"&gt;
+                &lt;/FORM&gt;
+                &lt;/CENTER&gt;
+                &lt;hr width="500" color="black" noshade&gt;
+                &lt;/BODY&gt;
+                &lt;/HTML&gt;
+                </code>
+            </pre>
+
+    <p>2. Program JavaScript (Onblurfocus.html)</p>
+        <pre>
+            <code class="language-html">
+                &lt;HTML&gt;
+                &lt;BODY&gt;
+                &lt;SCRIPT LANGUAGE="JavaScript"&gt;
+                function masukannim()
+                {
+                if (document.f.inim.value=="")
+                {
+                alert("anda belum memasukkan nim");
+                }
+                }
+                function masukannama()
+                {
+                if (document.f.inama.value=="")
+                {
+                alert("anda belum memasukkan nama");
+                }
+                }
+                function masukanalamat()
+                {
+                if (document.f.ialamat.value=="")
+                {
+                alert("anda belum memasukkan alamat");
+                }
+                }
+                function terimakasih()
+                {
+                if ((document.f.inim.value!="")&amp;&amp;(document.f.inama.value!="")&amp;&amp; (document.f.ialamat.value!=""))
+                {
+                alert("Terima Kasih Telah mengisi Data");
+                }
+                else
+                alert("Mohon Data Dilengkapi");
+                }
+                &lt;/SCRIPT&gt;
+                &lt;h1 align="center"&gt;Latihan Event OnFocus dan OnBlur&lt;/h1&gt;
+                &lt;hr width="600" color="black" noshade size="10"&gt;
+                &lt;font face="arial"&gt;
+                &lt;h3 align="center"&gt;R E G I S T R A S I&lt;/h3&gt;
+                &lt;hr width="600" color="black" noshade size="2"&gt;
+                &lt;CENTER&gt;
+                &lt;form name="f" method="get"&gt;
+                &lt;TABLE&gt;
+                &lt;tr&gt;
+                &lt;td width="31%"&gt;NIM&lt;/td&gt;
+                &lt;td width="7%"&gt;:&lt;/td&gt;
+                &lt;td width="62%"&gt;&lt;input type="text" name="inim" size="9" onFocus="window.status='Silahkan Mengisi NIM Anda';" onBlur="masukannim()"&gt;&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                &lt;td width="31%"&gt;NAMA&lt;/td&gt;
+                &lt;td width="7%"&gt;:&lt;/td&gt;
+                &lt;td width="62%"&gt;&lt;input type="text" name="inama" size="23" onFocus="window.status='Silahkan Mengisi Nama Anda';" onBlur="masukannama()"&gt;&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                &lt;td width="31%"&gt;ALAMAT&lt;/td&gt;
+                &lt;td width="7%"&gt;:&lt;/td&gt;
+                &lt;td width="62%"&gt;&lt;input type="text" name="ialamat" size="34" onFocus="window.status='Silahkan Mengisi Alamat Anda';" onBlur="masukanalamat()"&gt;&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;/table&gt;
+                &lt;hr width="600" color="black" noshade size="2"&gt;
+                &lt;p&gt;&lt;input type="BUTTON" value="Kirim" Onclick="terimakasih()"&gt;
+                &lt;input type="reset" value="Reset"&gt;&lt;/p&gt;
+                &lt;/form&gt;
+                &lt;/center&gt;
+                &lt;/BODY&gt;
+                &lt;/HTML&gt;
+            </code>
+        </pre>
+
+
+    <p>3. Program JavaScript (onload_unload.html)</p>
+<pre>
+    <code class="language-html">
+                &lt;HTML&gt;
+                &lt;BODY Onload="tanggal()" OnUnload="tutup()"&gt;
+                &lt;SCRIPT LANGUAGE="JavaScript"&gt;
+                &lt;!-- Hide from browsers that do not understand Javascript
+                function tanggal()
+                {
+                var d = new Date();
+                var y = d.getFullYear(); var m = d.getMonth() + 1; var d = d.getDate();
+                var t = d + '/' + m + '/' + y + ' ';
+                defaultStatus = "Anda datang pada tanggal " + t + "."; alert("Selamat Datang Teman \n Silahkan Masuk Ke Websiteku");
+                }
+                function timer()
+                {
+                var d = new Date();
+                var jam = d.getHours();
+                var menit = d.getMinutes(); var detik = d.getSeconds();
+                var strwaktu = (jam&lt;10)?"0"+jam:jam; strwaktu +=(menit&lt;10)?"0"+menit:" : "+menit; strwaktu +=(detik&lt;10)?"0"+detik:" : "+detik;
+                document.f.txtwaktu.value=" "+strwaktu; setTimeout("timer()",200);
+                }
+                function tutup()
+                {
+                window.alert("Terimakasih Telah Berkunjung\nJangan lupa Datang kembali Ya..");
+                }
+                // end hiding --&gt;
+                &lt;/SCRIPT&gt;
+                &lt;h1 align="center"&gt;Latihan Event OnLoad dan OnUnLoad&lt;/h1&gt;
+                &lt;hr width="600" color="black" noshade size="10"&gt;
+                &lt;font face="arial"&gt;
+                &lt;h3 align="center"&gt;SELAMAT DATANG&lt;/h3&gt;
+                &lt;CENTER&gt;
+                &lt;form name="f"&gt;
+                &lt;h4 align="center"&gt;Sekarang Menunjukkan Jam&lt;/h4&gt;
+                &lt;input type="Text" size="16" name="txtwaktu"&gt;
+                &lt;hr width="600" color="black" noshade size="2"&gt;
+                &lt;/form&gt;
+                &lt;SCRIPT LANGUAGE="JavaScript"&gt;timer()&lt;/SCRIPT&gt;
+                &lt;/center&gt;
+                &lt;/BODY&gt;
+                &lt;/HTML&gt;
+            </code>
+        </pre>
+
+    <p>4. Program JavaScript (on_mouse.html)</p>
+    <pre>
+        <code class="language-html">
+                &lt;HTML&gt;
+                &lt;BODY&gt;
+                &lt;SCRIPT LANGUAGE="JavaScript"&gt;
+                function g1()
+                {
+                document.f.imgfan.src="fanon.gif"
+                }
+                function g2()
+                {
+                document.f.imgfan.src="fanoff.gif"
+                }
+                &lt;/SCRIPT&gt;
+                &lt;SCRIPT&gt;
+                &lt;h1 align="center"&gt;Latihan Event OnMouseOver dan OnMouseOut&lt;/h1&gt;
+                &lt;hr width="600" color="black" noshade size="10"&gt;
+                &lt;font face="arial"&gt;
+                &lt;h3 align="center"&gt;SELAMAT DATANG&lt;/h3&gt;
+                &lt;CENTER&gt;
+                &lt;form name="f"&gt;
+                &lt;Img Name="logo" src="logo1.gif" onmouseover="document.logo.src='logo2.gif';
+                window.status='Motto Jawa Barat'"
+                onmouseout="document.logo.src='logo1.gif';
+                window.status='Gemah Ripah Repeh Rapih'"&gt;
+
+                &lt;h4 align="center"&gt;Kalo Kepanasan Tunjuk Kipas Angin Saja&lt;/h4&gt;
+                &lt;A HREF="latevenonclick.html" onMouseOver="g1()" onMouseOut="g2()"&gt;
+                &lt;IMAGE NAME="imgfan" SRC="fanoff.gif" WIDTH=61 HEIGHT=72 BORDER=0&gt;
+                &lt;/A&gt;
+                &lt;p&gt;
+                Contoh Link Dengan Even
+                &lt;/p&gt;
+                &lt;A HREF="http://www.google.com" onMouseOver="document.bgColor='#ffcc00';
+                onMouseOver=window.status='Ke Website Google.Com'; return true"&gt;Google.Com&lt;/A&gt;&lt;BR&gt;
+                &lt;A HREF="http://if.unikom.ac.id" onMouseOver="window.status='Oh, jangan deket-deket..'; return true" onMouseOut="alert('Nah gitu dong'); return true"&gt;Teknik Informatika UNIKOM &lt;/A&gt;
+                &lt;hr width="600" color="black" noshade size="2"&gt;
+                &lt;/form&gt;
+                &lt;/center&gt;
+                &lt;/BODY&gt;
+                &lt;/HTML&gt;
+            </code>
+        </pre>
+    <script src="prism.min.js"></script>
+    <script src="prism-javascript.min.js"></script>
+     <!-- footer start -->
+     <footer>
+      <div class="credit">
+      <p>Created by <a href="">gilangputrahartoyo|2SIMIA1</a>. | &copy; 2025.</p>
+     </div>
+    </footer>
+
+  </body>
+</html>
+

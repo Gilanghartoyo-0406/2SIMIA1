@@ -1,0 +1,176 @@
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      header {
+        background-color: #333;
+        padding: 10px 20px;
+      }
+
+      nav ol {
+        list-style-type: none; /* Hilangkan angka default */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 18px;
+      }
+
+      nav li {
+        display: inline;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: background 0.3s;
+      }
+
+      nav a:hover {
+        background-color: #555;
+
+      }
+
+      footer {
+      background-color: #333;
+      text-align: center;
+      padding: 1rem 0 3rem;
+      margin-top: 3rem;
+    }
+
+
+    footer .credit {
+      font-size: 0.8rem;
+    }
+    
+    footer .credit a{
+      color: #ffffff;
+      font-weight: 700;
+    }
+    </style>
+    <title>Gilang Putra Hartoyo | 2SIMIA1</title>
+    <link rel="stylesheet" href="prism-tomorrow.min.css" />
+  </head>
+  
+  <body>
+    <header>
+        <nav>
+            <ol>
+               <li><a href="materi1.html">Materi 1</a></li>
+                <li><a href="materi2.html">Materi 2</a></li>
+                <li><a href="materi3.html">Materi 3</a></li>
+                <li><a href="materi4.html">Materi 4</a></li>
+                <li><a href="materi5.html">Materi 5</a></li>
+                <li><a href="materi6.html">Materi 6</a></li>
+                <li><a href="materi7.html">Materi 7</a></li>
+                <li><a href="materi8.html">Materi 8</a></li>
+                <li><a href="materi9.html">Materi 9</a></li>
+                <li><a href="materi10.html">Materi 10</a></li>
+                <li><a href="materi11.html">Materi 11</a></li>
+                <li><a href="materi12.html">Materi 12</a></li>
+            </ol>
+        </nav>
+    </header>
+    <main style="padding: 20px;" >
+        <h1>VARIABEL DALAM JAVA SCRIPT</h1>
+        <p> 1. penggunaan var, let, dan const </p>
+        <pre>
+          <code class="language-html">
+              &lt;!DOCTYPE html&gt; 
+              &lt;html lang="en"&gt; 
+              &lt;head&gt;
+                &lt;meta charset="UTF-8"&gt;
+                &lt;title&gt;Contoh Variabel JavaScript&lt;/title&gt;
+              &lt;/head&gt;
+              &lt;body&gt;
+                &lt;h2&gt;Contoh Variabel: var, let, dan const&lt;/h2&gt;
+                &lt;button onclick="contohVar()"&gt;Coba var&lt;/button&gt;
+                &lt;button onclick="contohLet()"&gt;Coba let&lt;/button&gt;
+                &lt;button onclick="contohConst()"&gt;Coba const&lt;/button&gt;
+                &lt;p id="output"&gt;&lt;/p&gt;
+
+                &lt;script&gt;
+                  function contohVar() {
+                    var pesan = "Halo dari var!";
+                    var pesan = "Var bisa dideklarasi ulang!";
+                    document.getElementById("output").innerText = pesan;
+                  }
+
+                  function contohLet() {
+                    let umur = 20;
+                    umur = 21; // Bisa diubah
+                    // let umur = 22; // ❌ Error kalau dibuka
+                    document.getElementById("output").innerText = "Umur sekarang (let): " + umur;
+                  }
+
+                  function contohConst() {
+                    const kota = "Jakarta";
+                    // kota = "Bandung"; // ❌ Error kalau dibuka
+                    document.getElementById("output").innerText = "Kota asal (const): " + kota;
+                  }
+                &lt;/script&gt;
+              &lt;/body&gt;
+              &lt;/html&gt;
+          </code>
+        </pre>
+
+        <p>2. Menghitung Luas Persegi  </p>
+       <pre>
+          <code class="language-html">
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang="en"&gt;
+            &lt;head&gt;
+              &lt;meta charset="UTF-8"&gt;
+              &lt;title&gt;Menghitung Luas Persegi Panjang&lt;/title&gt;
+            &lt;/head&gt;
+              &lt;body&gt;
+                &lt;h1&gt;Hitung Luas Persegi Panjang&lt;/h1&gt;
+
+              &lt;label for="panjang"&gt;Panjang (cm): &lt;/label&gt;
+              &lt;input type="number" id="panjang"&gt;&lt;br&gt;&lt;br&gt;
+
+              &lt;label for="lebar"&gt;Lebar (cm): &lt;/label&gt;
+              &lt;input type="number" id="lebar"&gt;&lt;br&gt;&lt;br&gt;
+
+              &lt;button onclick="hitungLuas()"&gt;Hitung Luas&lt;/button&gt;
+
+              &lt;h2&gt;Hasil:&lt;/h2&gt;
+              &lt;p id="hasilLuas"&gt;&lt;/p&gt;
+
+              &lt;script&gt;
+                function hitungLuas() {
+                  // Ambil nilai dari input
+                  let panjang = document.getElementById("panjang").value;
+                  let lebar = document.getElementById("lebar").value;
+
+                  // Hitung luas
+                  const luas = panjang * lebar;
+
+                  // Tampilkan hasil
+                  document.getElementById("hasilLuas").innerText = 
+                    `Luas persegi panjang adalah ${luas} cm²`;
+                }
+                &lt;/script&gt;
+              &lt;/body&gt;
+              &lt;/html&gt;
+          </code>
+        </pre>
+
+    <script src="prism.min.js"></script>
+    <script src="prism-javascript.min.js"></script>
+    
+ <!-- footer start -->
+     <footer>
+      <div class="credit">
+      <p>Created by <a href="">gilangputrahartoyo|2SIMIA1</a>. | &copy; 2025.</p>
+     </div>
+    </footer>
+
+
+  </body>
+</html>

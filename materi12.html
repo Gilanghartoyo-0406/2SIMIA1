@@ -1,0 +1,313 @@
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      header {
+        background-color: #333;
+        padding: 10px 20px;
+      }
+
+      nav ol {
+        list-style-type: none; /* Hilangkan angka default */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 18px;
+      }
+
+      nav li {
+        display: inline;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: background 0.3s;
+      }
+
+      nav a:hover {
+        background-color: #555;
+      }
+
+      footer {
+      background-color: #333;
+      text-align: center;
+      padding: 1rem 0 3rem;
+      margin-top: 3rem;
+    }
+
+
+    footer .credit {
+      font-size: 0.8rem;
+    }
+    
+    footer .credit a{
+      color: #ffffff;
+      font-weight: 700;
+    }
+    </style>
+    <title>Gilang Putra Hartoyo | 2SIMIA1</title>
+    <link rel="stylesheet" href="prism-tomorrow.min.css" />
+  </head>
+  
+  <body>
+    <header>
+        <nav>
+            <ol>
+                <li><a href="materi1.html">Materi 1</a></li>
+                <li><a href="materi2.html">Materi 2</a></li>
+                <li><a href="materi3.html">Materi 3</a></li>
+                <li><a href="materi4.html">Materi 4</a></li>
+                <li><a href="materi5.html">Materi 5</a></li>
+                <li><a href="materi6.html">Materi 6</a></li>
+                <li><a href="materi7.html">Materi 7</a></li>
+                <li><a href="materi8.html">Materi 8</a></li>
+                <li><a href="materi9.html">Materi 9</a></li>
+                <li><a href="materi10.html">Materi 10</a></li>
+                <li><a href="materi11.html">Materi 11</a></li>
+                <li><a href="materi12.html">Materi 12</a></li>
+            </ol>
+        </nav>
+    </header>
+    <main style="padding: 20px;" >
+        <h1>EVENT (KEJADIAN) </h1>
+           <p>1. Program JavaScript (onsubmit.html)</p>
+<pre>
+    <code class="language-html">
+        &lt;Html&gt;
+        &lt;Body&gt;
+        &lt;SCRIPT LANGUAGE="JavaScript"&gt;
+        function cari()
+        {
+        var kata = document.formcari.keyword.value;
+        var hasil = "http://www.google.com/search?q=" + kata ;
+        window.open(hasil, 'google', 'height=500,width=750,scrollbars=yes,location=yes');
+        }
+        &lt;/SCRIPT&gt;
+        &lt;FORM NAME="formcari" onSubmit="cari(); return false;"&gt; &lt;!-- Menambahkan return false; untuk mencegah submit form default --&gt;
+        &lt;center&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+        &lt;td colspan="4" bgcolor="orange"&gt;&lt;h1 align="center"&gt;S e a r c h - E n g i n e&lt;/h1&gt;&lt;hr color="black" size="4" &gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+        &lt;td&gt;&lt;b&gt;Cari pakai&lt;/b&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;img src="logoogle.gif"&gt;&lt;/td&gt; &lt;!-- Catatan: Gambar ini harus ada di direktori yang sama --&gt;
+        &lt;td&gt;&lt;INPUT NAME="keyword" SIZE="40" TYPE="text"&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;INPUT TYPE="submit" VALUE="Cari .. !!"&gt;&lt;input type="reset" Value="Ulang"&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+        &lt;td colspan="4" bgcolor="orange"&gt;&lt;hr color="black" size="4"&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+        &lt;/center&gt;
+        &lt;/FORM&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+    </code>
+</pre>
+
+    <p>2. Program JavaScript (Validasi Form)</p>
+<pre>
+    <code class="language-html">
+        &lt;Html&gt;
+        &lt;Body&gt;
+        &lt;SCRIPT LANGUAGE="JavaScript"&gt;
+        function isiform(form)
+        {
+        // Memanggil fungsi validasi dan memeriksa hasilnya
+        var namaValid = isinama(form);
+        var emailValid = isiemail(form);
+        var komentarValid = isikomentar(form);
+
+        if (namaValid &amp;&amp; emailValid &amp;&amp; komentarValid) {
+            // Jika semua valid, submit form
+            form.submit(); // Menggunakan form.submit() bukan form.submit;
+        } else {
+            // Jika ada yang tidak valid, tampilkan pesan kesalahan
+            salahisi(form);
+        }
+        }
+
+        // Fungsi kosongkan di sini tidak relevan lagi dengan cara isiform() di atas
+        // function kosongkan(form) { ... }
+
+        function salahisi(form)
+        {
+        var teks ="Ada Kesalahan Isian :";
+        if (!isinama(form)) // Menggunakan ! untuk memeriksa jika false
+        {teks +="\nNama Anda";}
+        if (!isiemail(form))
+        {teks +="\nEmail Anda";}
+        if (!isikomentar(form))
+        {teks +="\nKomentar Anda";}
+        alert(teks);
+        }
+
+        function isinama(form)
+        {
+        if (form.nama.value === "") // Menggunakan === untuk perbandingan ketat
+        {return false;}
+        else
+        {return true;}
+        }
+
+        function isiemail(form)
+        {
+        if((form.email.value === "" || form.email.value.indexOf('@',0) === -1) || form.email.value.indexOf('.') === -1)
+        {return false;}
+        else
+        {return true;}
+        }
+
+        function isikomentar(form)
+        {
+        if(form.cs.value === "")
+        {return false;}
+        else
+        {return true;}
+        }
+        &lt;/SCRIPT&gt;
+        &lt;form name="f" method="post" action="mailto:irawan@unikom.ac.id?subject=Form"&gt;
+        &lt;font face="Arial"&gt;
+        &lt;table align="center"&gt;
+        &lt;tr bgcolor="gray"&gt;
+        &lt;td colspan="2" align="center"&gt;&lt;h1&gt;G u e s t B o o k&lt;/h1&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr bgcolor="peachpuff"&gt;
+        &lt;td&gt;Nama Anda :&lt;/td&gt;
+        &lt;td&gt;&lt;input type="text" value="" name="nama" size="30"&gt;&lt;/td&gt; &lt;!-- Menutup tag input --&gt;
+        &lt;/tr&gt;
+        &lt;tr bgcolor="peachpuff"&gt;
+        &lt;td&gt;Email Anda :&lt;/td&gt;
+        &lt;td&gt;&lt;input type="text" value="" name="email" size="30"&gt;&lt;/td&gt; &lt;!-- Menutup tag input --&gt;
+        &lt;/tr&gt;
+        &lt;tr bgcolor="peachpuff"&gt;
+        &lt;td&gt;Komentar Anda :&lt;/td&gt;
+        &lt;td&gt;&lt;textarea name="cs" rows="5" cols="50"&gt;&lt;/textarea&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr bgcolor="orange"&gt;
+        &lt;td colspan="2" align="center"&gt;
+        &lt;input type="button" name="thesubmit" value="kirim" onClick="isiform(this.form)"&gt;
+        &lt;input type="reset" value="hapus"&gt;
+        &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr bgcolor="gray"&gt;
+        &lt;td colspan="2" align="center"&gt;&lt;b&gt;Terima Kasih Telah Mengisi Guest Book&lt;/b&gt; &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+        &lt;/font&gt;
+        &lt;/form&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+    </code>
+</pre>
+
+    <p>3. Manipulasi Gambar (Slideshow Sederhana)</p>
+<pre>
+    <code class="language-html">
+        &lt;HTML&gt;
+        &lt;BODY&gt;
+        &lt;SCRIPT LANGUAGE="JavaScript"&gt;
+        var num=1
+        img1 = new Image ()
+        img1.src = "pic1.gif"
+        img2 = new Image ()
+        img2.src = "pic2.gif"
+        img3 = new Image ()
+        img3.src = "pic3.gif"
+        img4 = new Image ()
+        img4.src = "pic4.gif"
+        img5 = new Image ()
+        img5.src = "pic5.gif"
+        img6 = new Image ()
+        img6.src = "pic6.gif"
+
+        function slideshow(x)
+        {
+        num=num+x
+        if (num==7)
+        {num=1}
+        if (num==0)
+        {num=6}
+        document.mypic.src=eval("img"+num+".src")
+        }
+
+        &lt;/SCRIPT&gt;
+        &lt;CENTER&gt;
+        &lt;IMG SRC="pic1.gif" NAME="mypic" BORDER=0 height="200" width="150"&gt;&lt;p&gt;
+        &lt;A HREF="JavaScript:slideshow(-1)"&gt;Previous&lt;/A&gt;
+        &lt;A HREF="JavaScript:slideshow(1)"&gt;Next&lt;/A&gt;
+        &lt;/CENTER&gt;
+        &lt;/BODY&gt;
+        &lt;/HTML&gt;
+    </code>
+</pre>
+
+     <p>4. Program JavaScript (Slideshow Otomatis)</p>
+<pre>
+    <code class="language-html">
+        &lt;html&gt;
+        &lt;head&gt;
+        &lt;title&gt;Penggunaan Objek Image Untuk Membuat SlideShow&lt;/title&gt;
+        &lt;script language="javascript"&gt;
+        &lt;!--
+        var image1=new Image()
+        image1.src="1.gif"
+        var image2=new Image()
+        image2.src="2.gif"
+        var image3=new Image()
+        image3.src="3.gif"
+        //--&gt;
+        &lt;/script&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+        &lt;center&gt;
+        &lt;h2&gt;Penggunaan Objek Image Untuk Membuat SlideShow&lt;/H2&gt;&lt;hr size=5 color="black"&gt;
+        &lt;img src="1.gif" name="slide" width="100" height="100"&gt;
+        &lt;script&gt;
+        &lt;!--
+        //variable yang akan menaikan hitungan gambar
+        var step=1
+
+        function slideit(){
+        //jika browser tidak mendukung metode dokumen.image maka keluar.
+        if (!document.images) return; // return if document.images is not supported (older browsers)
+
+        document.images.slide.src=eval("image"+step+".src");
+
+        if (step&lt;3) { // Hanya ada 3 gambar (image1, image2, image3)
+            step++;
+        } else {
+            step=1; // Kembali ke gambar pertama setelah gambar terakhir
+        }
+        //memanggil function "slideit()" setiap 1 detik
+        setTimeout("slideit()",1000);
+        }
+        slideit(); // Panggil fungsi pertama kali untuk memulai slideshow
+        //--&gt;
+        &lt;/script&gt;
+        &lt;hr size=5 color="black"&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+    </code>
+</pre>
+
+    <script src="prism.min.js"></script>
+    <script src="prism-javascript.min.js"></script>
+     <!-- footer start -->
+     <footer>
+      <div class="credit">
+      <p>Created by <a href="">gilangputrahartoyo|2SIMIA1</a>. | &copy; 2025.</p>
+     </div>
+    </footer>
+
+  </body>
+</html>
+

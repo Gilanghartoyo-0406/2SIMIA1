@@ -1,0 +1,229 @@
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      header {
+        background-color: #333;
+        padding: 10px 20px;
+      }
+
+      nav ol {
+        list-style-type: none; /* Hilangkan angka default */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 18px;
+      }
+
+      nav li {
+        display: inline;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: background 0.3s;
+      }
+
+      nav a:hover {
+        background-color: #555;
+      }
+
+      footer {
+      background-color: #333;
+      text-align: center;
+      padding: 1rem 0 3rem;
+      margin-top: 3rem;
+    }
+
+
+    footer .credit {
+      font-size: 0.8rem;
+    }
+    
+    footer .credit a{
+      color: #ffffff;
+      font-weight: 700;
+    }
+    </style>
+    <title>Gilang Putra Hartoyo | 2SIMIA1</title>
+    <link rel="stylesheet" href="prism-tomorrow.min.css" />
+  </head>
+  
+  <body>
+    <header>
+        <nav>
+            <ol>
+                <li><a href="materi1.html">Materi 1</a></li>
+                <li><a href="materi2.html">Materi 2</a></li>
+                <li><a href="materi3.html">Materi 3</a></li>
+                <li><a href="materi4.html">Materi 4</a></li>
+                <li><a href="materi5.html">Materi 5</a></li>
+                <li><a href="materi6.html">Materi 6</a></li>
+                <li><a href="materi7.html">Materi 7</a></li>
+                <li><a href="materi8.html">Materi 8</a></li>
+                <li><a href="materi9.html">Materi 9</a></li>
+                <li><a href="materi10.html">Materi 10</a></li>
+                <li><a href="materi11.html">Materi 11</a></li>
+                <li><a href="materi12.html">Materi 12</a></li>
+            </ol>
+        </nav>
+    </header>
+    <main style="padding: 20px;" >
+        <h1>COSNTRUCTOR</h1>
+        <p> 1.  contoh penggunaan getter dan setter dalam sebuah kelas (class) di JavaScript </p>
+        <pre>
+          <code class="language-js">
+            class Animal { 
+                constructor(name) { 
+                    this.name = name 
+                } 
+                
+                get name() { 
+                    // must use separeted property 
+                    return this._name 
+                } 
+                
+                set name(value) { 
+                    if(value.length == 0) { 
+                        console.log("Name can't empty") 
+                        return 
+                } 
+                    // must use separeted property 
+                    this._name = value 
+                } 
+                
+            } 
+            let animal = new Animal("Squirrel") 
+            console.log(animal.name) 
+            animal = new Animal("")
+          </code>
+        </pre>
+
+        <p>2.  Inisialisasi Properti Dasar   </p>
+       <pre>
+          <code class="language-js">
+                class Rectangle { 
+                    constructor(width, height) { 
+                        this.width = width; 
+                        this.height = height; 
+                        this.area = this.width * this.height; // Properti dapat dihitung di konstruktor 
+                    } 
+                    
+                    getArea() { 
+                        return this.area; 
+                    } 
+                } 
+                    
+                let rect1 = new Rectangle(5, 10); 
+                console.log(rect1.width);  // Output: 5 
+                console.log(rect1.height); // Output: 10 
+                console.log(rect1.area);   // Output: 50 
+                console.log(rect1.getArea()); // Output: 50
+          </code>
+        </pre>
+
+        <p>3. Properti dengan Nilai Default    </p>
+       <pre>
+          <code class="language-js">
+           class Circle { 
+                constructor(radius = 1) { // Jika radius tidak diberikan, defaultnya 1 
+                    this.radius = radius; 
+                    this.diameter = 2 * this.radius; 
+                } 
+                
+                getDiameter() { 
+                    return this.diameter; 
+                } 
+            } 
+                
+            let circle1 = new Circle(7); 
+            console.log(circle1.radius);   // Output: 7 
+            console.log(circle1.diameter); // Output: 14 
+                
+            let circle2 = new Circle(); // Tidak memberikan argumen, menggunakan nilai default 
+            console.log(circle2.radius);   // Output: 1 
+            console.log(circle2.diameter); // Output: 2 
+          </code>
+        </pre>
+
+        <p>4. Validasi Input dalam Konstruktor  </p>
+       <pre>
+          <code class="language-js">
+            class Product { 
+                constructor(name, price) { 
+                    if (typeof name !== 'string' || name.trim() === '') { 
+                        throw new Error("Nama produk harus berupa string yang tidak kosong."); 
+                    } 
+                    if (typeof price !== 'number' || price <= 0) { 
+                        throw new Error("Harga produk harus berupa angka positif."); 
+                    } 
+                    this.name = name; 
+                    this.price = price; 
+                } 
+                
+                displayInfo() { 
+                    console.log(`${this.name}: $${this.price.toFixed(2)}`); 
+                } 
+            } 
+                
+                try { 
+                let product1 = new Product("Laptop", 1200); 
+                product1.displayInfo(); // Output: Laptop: $1200.00 
+                let product2 = new Product("Mouse", -5); // Akan melempar error 
+                } catch (error) { 
+                console.error("Terjadi kesalahan saat membuat produk:", error.message); 
+                } 
+          </code>
+        </pre>
+
+        <p>5. Menambahkan Method (Fungsi dalam Class)   </p>
+       <pre>
+          <code class="language-js">
+            class Persegi { 
+                constructor(sisi) { 
+                this.sisi = sisi; 
+            } 
+            
+            // Method untuk menghitung luas persegi 
+            hitungLuas() { 
+                return this.sisi * this.sisi; 
+            } 
+            
+            // Method untuk menghitung keliling persegi 
+            hitungKeliling() { 
+                return 4 * this.sisi; 
+            } 
+            
+            // Method yang mengakses properti lain dan memanggil method lain 
+            deskripsi() { 
+                console.log(`Persegi dengan sisi ${this.sisi}, luas ${this.hitungLuas()},  
+                dan keliling ${this.hitungKeliling()}.`); 
+            } 
+            } 
+            
+            let persegiA = new Persegi(5); 
+            console.log(persegiA.hitungLuas());    // Output: 25 
+            console.log(persegiA.hitungKeliling()); // Output: 20 
+            persegiA.deskripsi();                  // Output: Persegi dengan sisi 5, luas 25, dan keliling 20. 
+          </code>
+        </pre>
+ 
+    <script src="prism.min.js"></script>
+    <script src="prism-javascript.min.js"></script>
+     <!-- footer start -->
+     <footer>
+      <div class="credit">
+      <p>Created by <a href="">gilangputrahartoyo|2SIMIA1</a>. | &copy; 2025.</p>
+     </div>
+    </footer>
+
+  </body>
+</html>
+

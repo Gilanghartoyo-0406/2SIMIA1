@@ -1,0 +1,238 @@
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      header {
+        background-color: #333;
+        padding: 10px 20px;
+      }
+
+      nav ol {
+        list-style-type: none; /* Hilangkan angka default */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 18px;
+      }
+
+      nav li {
+        display: inline;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: background 0.3s;
+      }
+
+      nav a:hover {
+        background-color: #555;
+      }
+
+      footer {
+      background-color: #333;
+      text-align: center;
+      padding: 1rem 0 3rem;
+      margin-top: 3rem;
+    }
+
+
+    footer .credit {
+      font-size: 0.8rem;
+    }
+    
+    footer .credit a{
+      color: #ffffff;
+      font-weight: 700;
+    }
+    </style>
+    <title>Gilang Putra Hartoyo | 2SIMIA1</title>
+    <link rel="stylesheet" href="prism-tomorrow.min.css" />
+  </head>
+  
+  <body>
+    <header>
+        <nav>
+            <ol>
+                <li><a href="materi1.html">Materi 1</a></li>
+                <li><a href="materi2.html">Materi 2</a></li>
+                <li><a href="materi3.html">Materi 3</a></li>
+                <li><a href="materi4.html">Materi 4</a></li>
+                <li><a href="materi5.html">Materi 5</a></li>
+                <li><a href="materi6.html">Materi 6</a></li>
+                <li><a href="materi7.html">Materi 7</a></li>
+                <li><a href="materi8.html">Materi 8</a></li>
+                <li><a href="materi9.html">Materi 9</a></li>
+                <li><a href="materi10.html">Materi 10</a></li>
+                <li><a href="materi11.html">Materi 11</a></li>
+                <li><a href="materi12.html">Materi 12</a></li>
+            </ol>
+        </nav>
+    </header>
+    <main style="padding: 20px;" >
+        <h1>PROPERTI DAN METHOD DALAM CLASS</h1>
+        <p> 1. Deklarasi di dalam constructor() </p>
+        <pre>
+          <code class="language-js">
+            class Mobil { 
+                constructor(merk, warna) { 
+                    this.merk = merk;   // Mendeklarasikan dan menginisialisasi properti 'merk' 
+                    this.warna = warna; // Mendeklarasikan dan menginisialisasi properti 'warna' 
+                    this.kecepatan = 0; // Mendeklarasikan dan menginisialisasi properti 'kecepatan' 
+                dengan nilai default 
+                } 
+            } 
+                
+                let mobilSaya = new Mobil("Toyota", "Merah"); 
+                console.log(mobilSaya.merk);     // Output: Toyota 
+                console.log(mobilSaya.warna);    // Output: Merah 
+                console.log(mobilSaya.kecepatan); // Output: 0
+          </code>
+        </pre>
+
+        <p>2. Deklarasi di luar constructor() (Field Declaration)  </p>
+       <pre>
+          <code class="language-js">
+                class Sepeda { 
+                    merk = "Polygon"; // Deklarasi properti 'merk' dengan nilai default 
+                    warna;           // Deklarasi properti 'warna' tanpa nilai default 
+                    
+                    constructor(warna) { 
+                        this.warna = warna; // Menginisialisasi properti 'warna' di konstruktor 
+                    } 
+                } 
+                    
+                let sepedaSaya = new Sepeda("Biru"); 
+                console.log(sepedaSaya.merk);  // Output: Polygon 
+                console.log(sepedaSaya.warna); // Output: Biru 
+                    
+                let sepedaLain = new Sepeda(); 
+                console.log(sepedaLain.merk);  // Output: Polygon 
+                console.log(sepedaLain.warna); // Output: undefined (karena tidak diinisialisasi saat pembuatan objek) 
+          </code>
+        </pre>
+
+        <p>3. Properti Instance Dinamis   </p>
+       <pre>
+          <code class="language-js">
+            let mobilLama = new Mobil("Daihatsu", "Hitam"); 
+            mobilLama.tahunProduksi = 2005; // Menambahkan properti 'tahunProduksi' secara dinamis 
+            ke objek mobilLama 
+            console.log(mobilLama.tahunProduksi); // Output: 2005
+          </code>
+        </pre>
+
+        <p>4. Menambahkan Method (Fungsi dalam Class)   </p>
+       <pre>
+          <code class="language-js">
+            class Persegi { 
+                constructor(sisi) { 
+                this.sisi = sisi; 
+            } 
+            
+            // Method untuk menghitung luas persegi 
+            hitungLuas() { 
+                return this.sisi * this.sisi; 
+            } 
+            
+            // Method untuk menghitung keliling persegi 
+            hitungKeliling() { 
+                return 4 * this.sisi; 
+            } 
+            
+            // Method yang mengakses properti lain dan memanggil method lain 
+            deskripsi() { 
+                console.log(`Persegi dengan sisi ${this.sisi}, luas ${this.hitungLuas()},  
+                dan keliling ${this.hitungKeliling()}.`); 
+            } 
+            } 
+            
+            let persegiA = new Persegi(5); 
+            console.log(persegiA.hitungLuas());    // Output: 25 
+            console.log(persegiA.hitungKeliling()); // Output: 20 
+            persegiA.deskripsi();                  // Output: Persegi dengan sisi 5, luas 25, dan keliling 20. 
+          </code>
+        </pre>
+
+        <p>5. Mengakses Properti dari Dalam Class   </p>
+       <pre>
+          <code class="language-js">
+            class Orang { 
+                constructor(nama, usia) { 
+                    this.nama = nama; 
+                    this.usia = usia; 
+                } 
+                
+                ucapkanSalam() { 
+                    console.log(`Halo, nama saya ${this.nama}.`); // Mengakses properti 'nama' 
+                menggunakan 'this' 
+                } 
+                
+                tambahUsia(tahun) { 
+                    this.usia += tahun; // Mengubah nilai properti 'usia' menggunakan 'this' 
+                } 
+                
+                lihatUsia() { 
+                    console.log(`Usia saya sekarang ${this.usia} tahun.`); // Mengakses properti 
+                'usia' menggunakan 'this' 
+                } 
+            } 
+                
+            let orang1 = new Orang("Alice", 25); 
+            orang1.ucapkanSalam(); // Output: Halo, nama saya Alice. 
+            orang1.tambahUsia(2); 
+            orang1.lihatUsia();  // Output: Usia saya sekarang 27 tahun. 
+          </code>
+        </pre>
+
+        <p>6. Mengakses Method Lain dari Dalam Class   </p>
+       <pre>
+          <code class="language-js">
+            class Kalkulator { 
+                constructor(angka1, angka2) { 
+                    this.angka1 = angka1; 
+                    this.angka2 = angka2; 
+                } 
+                
+                tambah() { 
+                    return this.angka1 + this.angka2; 
+                } 
+                
+                kali() { 
+                    return this.angka1 * this.angka2; 
+                } 
+                
+                hasilOperasi() { 
+                    // Memanggil method 'tambah' menggunakan 'this' 
+                    console.log(`Hasil penjumlahan: ${this.tambah()}`);  
+                
+                    // Memanggil method 'kali' menggunakan 'this' 
+                    console.log(`Hasil perkalian: ${this.kali()}`);    
+                } 
+            } 
+                
+            let calc = new Kalkulator(10, 5); 
+            calc.hasilOperasi(); 
+            // Output: Hasil penjumlahan: 15 
+            // Output: Hasil perkalian: 50
+          </code>
+        </pre>
+
+    <script src="prism.min.js"></script>
+    <script src="prism-javascript.min.js"></script>
+     <!-- footer start -->
+     <footer>
+      <div class="credit">
+      <p>Created by <a href="">gilangputrahartoyo|2SIMIA1</a>. | &copy; 2025.</p>
+     </div>
+    </footer>
+
+  </body>
+</html>
+

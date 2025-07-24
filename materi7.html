@@ -1,0 +1,218 @@
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      header {
+        background-color: #333;
+        padding: 10px 20px;
+      }
+
+      nav ol {
+        list-style-type: none; /* Hilangkan angka default */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 18px;
+      }
+
+      nav li {
+        display: inline;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: background 0.3s;
+      }
+
+      nav a:hover {
+        background-color: #555;
+      }
+
+      footer {
+      background-color: #333;
+      text-align: center;
+      padding: 1rem 0 3rem;
+      margin-top: 3rem;
+    }
+
+
+    footer .credit {
+      font-size: 0.8rem;
+    }
+    
+    footer .credit a{
+      color: #ffffff;
+      font-weight: 700;
+    }
+    </style>
+    <title>Gilang Putra Hartoyo | 2SIMIA1</title>
+    <link rel="stylesheet" href="prism-tomorrow.min.css" />
+  </head>
+  
+  <body>
+    <header>
+        <nav>
+            <ol>
+                <li><a href="materi1.html">Materi 1</a></li>
+                <li><a href="materi2.html">Materi 2</a></li>
+                <li><a href="materi3.html">Materi 3</a></li>
+                <li><a href="materi4.html">Materi 4</a></li>
+                <li><a href="materi5.html">Materi 5</a></li>
+                <li><a href="materi6.html">Materi 6</a></li>
+                <li><a href="materi7.html">Materi 7</a></li>
+                <li><a href="materi8.html">Materi 8</a></li>
+                <li><a href="materi9.html">Materi 9</a></li>
+                <li><a href="materi10.html">Materi 10</a></li>
+                <li><a href="materi11.html">Materi 11</a></li>
+                <li><a href="materi12.html">Materi 12</a></li>
+            </ol>
+        </nav>
+    </header>
+    <main style="padding: 20px;" >
+        <h1>VISIBILITY (ACCESS MODIFIER) </h1>
+        <p> 1. Public (Implisit) </p>
+        <pre>
+          <code class="language-js">
+            class Mobil { 
+                constructor(nama, warna) { 
+                this.nama = nama; // public property 
+                    this.warna = warna; // public property 
+                } 
+                
+                maju() { // public method 
+                    console.log(`${this.nama} berwarna ${this.warna} sedang maju.`); 
+                } 
+            } 
+                
+            const mobilSaya = new Mobil("Avanza", "Hitam"); 
+            console.log(mobilSaya.nama); // Akses public property dari luar 
+            mobilSaya.maju(); // Akses public method dari luar 
+                
+            class MobilSport extends Mobil { 
+                ngebut() { 
+                    console.log(`${this.nama} ngebut dengan kecepatan tinggi.`); // Mengakses public 
+                property dari subclass 
+                } 
+            } 
+                
+            const mobilSportSaya = new MobilSport("Ferrari", "Merah"); 
+            mobilSportSaya.ngebut();
+          </code>
+        </pre>
+
+        <p>2. Private (Menggunakan #) </p>
+       <pre>
+          <code class="language-js">
+                class AkunBank { 
+                    #saldo = 0; // private class field 
+                    
+                    constructor(nomorAkun, namaPemilik) { 
+                        this.nomorAkun = nomorAkun; // public property 
+                        this.namaPemilik = namaPemilik; // public property 
+                    } 
+                    
+                    deposit(jumlah) { 
+                        if (jumlah > 0) { 
+                            this.#saldo += jumlah; // Mengakses private field dari dalam class 
+                            this.#tampilkanSaldo(); // Mengakses private method dari dalam class 
+                        } 
+                    } 
+                    
+                    tarik(jumlah) { 
+                        if (jumlah > 0 && jumlah <= this.#saldo) { 
+                            this.#saldo -= jumlah; // Mengakses private field dari dalam class 
+                            this.#tampilkanSaldo(); // Mengakses private method dari dalam class 
+                        } else { 
+                            console.log("Saldo tidak mencukupi atau jumlah tidak valid."); 
+                        } 
+                    } 
+                    
+                    #tampilkanSaldo() { // private class method 
+                        console.log(`Saldo saat ini: Rp.${this.#saldo}`); 
+                    } 
+                    
+                    cekSaldo() { 
+                        return this.#saldo; // Meskipun method ini public, ia mengembalikan nilai private 
+                    field 
+                    } 
+                } 
+                    
+                const akunBudi = new AkunBank("12345", "Budi"); 
+                akunBudi.deposit(100000); 
+                akunBudi.tarik(50000);
+
+                // console.log(akunBudi.#saldo);  
+                // Akan menghasilkan error (Private field '#saldo' must be declared in an enclosing class) 
+                // akunBudi.#tampilkanSaldo();  
+                // Akan menghasilkan error (Private method '#tampilkanSaldo' must be declared in an enclosing class)
+
+                console.log(`Saldo setelah dicek: Rp.${akunBudi.cekSaldo()}`); 
+                    
+                class AkunBankPremium extends AkunBank { 
+                // Subclass tidak dapat langsung mengakses private field/method dari superclass 
+                // cobaLihatSaldoRahasia() { 
+                // console.log(`Saldo Rahasia: ${this.#saldo}`); // Akan menghasilkan error 
+                // } 
+                } 
+                    
+                const akunPremium = new AkunBankPremium("67890", "Susi"); 
+                akunPremium.deposit(200000);
+          </code>
+        </pre>
+
+        <p>3. Protected (Menggunakan Konvensi) </p>
+       <pre>
+          <code class="language-js">
+           class Kendaraan { 
+                constructor(merk) { 
+                    this.merk = merk; // public 
+                    this._kecepatanMaks = 180; // Konvensi untuk protected 
+                } 
+                
+                info() { 
+                    console.log(`Merk: ${this.merk}, Kecepatan Maks: ${this._kecepatanMaks}`); // 
+                Diakses dari dalam class 
+                } 
+            } 
+                
+            class MobilBalap extends Kendaraan { 
+                constructor(merk) { 
+                    super(merk); 
+                    this._kecepatanMaks = 250; // Diakses dan dimodifikasi dari subclass (sesuai konsep protected) 
+                } 
+                
+                infoBalap() { 
+                    console.log(`Mobil Balap ${this.merk}, Kecepatan Maks: ${this._kecepatanMaks}`); 
+                // Diakses dari dalam subclass 
+                } 
+            } 
+                
+            const kendaraanUmum = new Kendaraan("Toyota"); 
+            kendaraanUmum.info(); 
+            console.log(kendaraanUmum._kecepatanMaks); // Secara teknis bisa diakses, tapi ini melanggar konvensi protected 
+                
+            const mobilBalapSaya = new MobilBalap("Lamborghini"); 
+            mobilBalapSaya.infoBalap(); 
+            console.log(mobilBalapSaya._kecepatanMaks); // Secara teknis bisa diakses, tapi ini melanggar konvensi protected
+          </code>
+        </pre>
+
+    <script src="prism.min.js"></script>
+    <script src="prism-javascript.min.js"></script>
+     <!-- footer start -->
+     <footer>
+      <div class="credit">
+      <p>Created by <a href="">gilangputrahartoyo|2SIMIA1</a>. | &copy; 2025.</p>
+     </div>
+    </footer>
+
+  </body>
+</html>
+
